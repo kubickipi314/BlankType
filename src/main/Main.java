@@ -51,9 +51,19 @@ public class Main {
         button2.setVisible(true);
         button2.setBounds(400,100,100,100);
 
+        JButton button3 = new JButton("GREEN");
+        button3.addActionListener(e -> {area.setCaretColor(Color.GREEN); area.setForeground(Color.GREEN);});
+        button3.setBackground(Color.BLACK);
+        button3.setForeground((Color.GREEN));
+        button3.setVisible(true);
+        button3.setBounds(400,200,100,100);
+
+
         //PANEL
         panel.add(button);
         panel.add(button2);
+        panel.add(button3);
+
         panel.add(scrollPane);
         panel.setPreferredSize(new Dimension(200, 200));
         panel.setBackground(Color.BLACK);
