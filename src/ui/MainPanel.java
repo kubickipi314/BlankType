@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainPanel extends JPanel {
+
+    JLabel wordCountLabel;
+    JLabel charCountLabel;
+    JLabel speedLabel;
     TextPanel textPanel;
     JButton button;
     JButton button2;
@@ -12,7 +16,21 @@ public class MainPanel extends JPanel {
     public MainPanel() {
         setLayout(null);
 
-        textPanel = new TextPanel();
+        Font font = new Font("DialogInput", Font.PLAIN, 15);
+        wordCountLabel = new JLabel("Words: 0");
+        wordCountLabel.setBounds(0,300,200,20);
+        wordCountLabel.setFont(font);
+        wordCountLabel.setForeground(Color.GREEN);
+        charCountLabel = new JLabel("Characters: 0");
+        charCountLabel.setBounds(0,320,200,20);
+        charCountLabel.setFont(font);
+        charCountLabel.setForeground(Color.GREEN);
+        speedLabel = new JLabel("Speed: 0 WPM");
+        speedLabel.setBounds(0,340, 200, 20);
+        speedLabel.setFont(font);
+        speedLabel.setForeground(Color.GREEN);
+
+        textPanel = new TextPanel(wordCountLabel,charCountLabel,speedLabel);
         textPanel.setVisible(true);
 
         //BUTTONS
@@ -51,6 +69,9 @@ public class MainPanel extends JPanel {
         add(button2);
         add(button3);
         add(textPanel);
+        add(wordCountLabel);
+        add(charCountLabel);
+        add(speedLabel);
 
         setPreferredSize(new Dimension(200, 200));
         setBackground(Color.BLACK);

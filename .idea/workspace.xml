@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="def98294-a490-40da-b385-7df5e9cb8fdc" name="Changes" comment="shaping the concept of editor for journaling (primitive version)">
-      <change afterPath="$PROJECT_DIR$/src/ui/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/MainPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/MainWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/TextPanel.java" afterDir="false" />
+    <list default="true" id="def98294-a490-40da-b385-7df5e9cb8fdc" name="Changes" comment="refactoring structure, better concept version">
+      <change afterPath="$PROJECT_DIR$/src/animation/AnimationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/TextPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TextPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -41,8 +47,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,6 +79,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-25a4bffe" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,6 +94,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721827591019</updated>
+      <workItem from="1722890840437" duration="668000" />
+      <workItem from="1723036725167" duration="9847000" />
     </task>
     <task id="LOCAL-00001" summary="shaping the concept of editor for journaling (primitive version)">
       <option name="closed" value="true" />
@@ -85,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722116843038</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactoring structure, better concept version">
+      <option name="closed" value="true" />
+      <created>1722627828394</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722627828394</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="shaping the concept of editor for journaling (primitive version)" />
-    <option name="LAST_COMMIT_MESSAGE" value="shaping the concept of editor for journaling (primitive version)" />
+    <MESSAGE value="refactoring structure, better concept version" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring structure, better concept version" />
   </component>
 </project>
