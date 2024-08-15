@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Caret;
+import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,9 +17,8 @@ public class TextPanel extends JPanel {
     private final JTextArea textArea;
     AtomicInteger charCount;
     AtomicInteger wordCount;
-    AtomicInteger lastCharCount;
 
-    public TextPanel(JLabel wordCountLabel, JLabel charCountLabel, JLabel speedLabel) {
+    public TextPanel(JLabel speedLabel, JPanel speedStrip) {
 
         setLayout(null);
 
@@ -28,26 +28,17 @@ public class TextPanel extends JPanel {
         textArea = new JTextArea("");
 
         textArea.setBackground(Color.BLACK);
-        textArea.setForeground(Color.GREEN);
+        textArea.setForeground(Color.GRAY);
         textArea.setBounds(0, 0, 400, 300);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
 
         textArea.getDocument().addDocumentListener(new DocumentListener() {
             public void update() {
-                // Get the text from the JTextArea
                 String text = textArea.getText();
 
-                // Count characters
                 charCount.set(text.length());
 
-                // Count words
-                String[] words = text.trim().split("\\s+");
-                wordCount.set(text.trim().isEmpty() ? 0 : words.length);
-
-                // Update labels
-                wordCountLabel.setText("Words: " + wordCount.get());
-                charCountLabel.setText("Characters: " + charCount.get());
             }
 
             @Override
@@ -78,20 +69,39 @@ public class TextPanel extends JPanel {
                 charsInMemory += charsTypedLastInterval;
                 charsInMemory -= charsInIntervals.remove();
 
-                // Calculate speed in words per minute
                 int speedWPM = ((charsInMemory) * 30 / 5 );
 
                 speedLabel.setText("Speed: " + speedWPM + " WPM");
 
-                // Update last counts
                 lastCharCount = charCount.get();
             }
         });
         timer.start();
 
+        Timer stripTimer = new Timer(100, new ActionListener() {
+            int lastCharCount;
+            int charsInMemory;
+            final Queue<Integer> charsInIntervals = new LinkedList<>(Arrays.asList(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int charsTypedLastInterval = charCount.get() - lastCharCount;
+                charsInIntervals.add(charsTypedLastInterval);
+
+                charsInMemory += charsTypedLastInterval;
+                charsInMemory -= charsInIntervals.remove();
+
+                int speedWPM = ((charsInMemory) * 30 / 5 );
+
+                speedStrip.setBounds(0,325, speedWPM, 10);
+
+                lastCharCount = charCount.get();
+            }
+        });
+        stripTimer.start();
+
         Caret caret = textArea.getCaret();
         caret.setBlinkRate(200);
-        textArea.setCaretColor(Color.GREEN);
+        textArea.setCaretColor(Color.GRAY);
         textArea.setCaretPosition(0);
 
         Font font = new Font("DialogInput", Font.PLAIN, 18); // Font name, style, size
